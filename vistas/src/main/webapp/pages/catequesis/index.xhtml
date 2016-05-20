@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/WEB-INF/templates/newTemplate.xhtml"> 
+        <!-- ADMINISTRACION DE ACTIVOS FIJOS  -->
+        <ui:define name="content">
+            <h:form id="form">
+                <p:growl id="mensaje" />
+                <ui:include src="tabla.xhtml"  />
+
+                <p:dialog id="dialog" header="Estudiantes"
+                          widgetVar="estudiantes" modal="true" resizable="false" closable="false"
+                          showEffect="clip" hideEffect="fold" 
+                          visible="#{estudianteDM.showDialogo}">
+                    <ui:include src="crud.xhtml" />
+                    <p:commandButton value="Guardar" style="margin-right:10px"
+                                     id="btnGuardar" process="@this,:form:idPanelPrincipal" icon="ui-icon-disk"
+                                     actionListener="#{estudianteController.guardarEstudiante()}"
+                                     update=":form:mensaje,:form:dialog,:form:tablaEstudiante" />
+
+                    <p:commandButton value="Cancelar" id="btbCancelar"
+                                     process="@this" actionListener="#{estudianteController.cancelar()}"
+                                     update=":form:mensaje,:form:dialog" icon="ui-icon-closethick"
+                                     >
+                       
+                    </p:commandButton>
+                </p:dialog>
+                <p:remoteCommand
+                    actionListener="#{estudianteController.inform()}"
+                    name="initFunction" update="form" process="@this" />
+            </h:form>
+            <script type="text/javascript">
+                initFunction();
+            </script>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <p:fieldset legend="Estudiante">
+        <h:panelGrid columns="2" id="idPanelPrincipal">
+            <p:outputLabel for="idCedula" value="Cédula" />
+            <p:inputText id="idCedula" value="#{estudianteDM.estudiantes.cedula}"
+                          required="true"
+                         requiredMessage="La cedula es obligatorio">
+            </p:inputText>
+             <p:outputLabel for="idNombre" value="Nombres" />
+             <p:inputText id="idNombre" value="#{estudianteDM.estudiantes.nombres}"
+                          required="true"
+                         requiredMessage="El nombre es obligatorio">
+             </p:inputText>
+            <p:outputLabel for="idApellido" value="Apellido" />
+            <p:inputText id="idApellido" value="#{estudianteDM.estudiantes.apellidos}"
+                          required="true"
+                         requiredMessage="El apellido es obligatorio">
+            </p:inputText>
+            <p:outputLabel for="idCurso" value="Curso" />
+            <p:inputText id="idCurso" value="#{estudianteDM.estudiantes.curso}"
+                          required="true"
+                         requiredMessage="El curso es obligatorio">
+            </p:inputText>
+            <p:outputLabel for="idParalelo" value="Paralelo" />
+            <p:inputText id="idParalelo" value="#{estudianteDM.estudiantes.paralelo}"
+                          required="true"
+                         requiredMessage="El paralelo es obligatorio">
+            </p:inputText>
+        </h:panelGrid>
+    </p:fieldset>
+</html>

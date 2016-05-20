@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <p:dataTable id="tablaEstudiante" rowIndexVar="rowIndex"
+                 value="#{estudianteDM.listaEstudiantes}" var="item"
+                 emptyMessage="#{lbl.tablaVacia}">
+        <f:facet name="header">
+            <div class="cabeceraTabla">
+                <div class="tituloTabla">ListaEstudiantes</div>
+                <div class="botonesTabla">
+                    <p:commandButton  value="Nuevo" process="@this" actionListener="#{estudianteController.nuevo()}"
+                                      update=":form:dialog"                       />
+                </div>
+            </div>
+        </f:facet>
+        <!-- COLUMNA CODIGO DEL PRODUCTO -->
+        <p:column headerText="Cédula" >
+            <p:outputLabel value="#{item.cedula }" 
+                         styleClass="oscuro" />
+        </p:column>
+        <!-- COLUMNA DETALLE DEL PRODUCTO -->
+        <p:column headerText="Nombres" >
+            <p:outputLabel value="#{item.nombres}"/>
+        </p:column>
+        <p:column headerText="Apellidos" >
+            <p:outputLabel value="#{item.apellidos}"  />
+        </p:column>
+           <p:column headerText="Paralelo" >
+               <p:outputLabel value="#{item.paralelo}"  />
+        </p:column>
+           <p:column headerText="Sacramento" >
+               <p:outputLabel value="#{item.estudianteSacramento.nombre}"  />
+        </p:column>
+        <p:column headerText="Acción" >
+            <p:commandButton  value="Editar" actionListener="#{estudianteController.seleccionar(item)}"
+                              icon="ui-icon-check" process="@this,:form:tablaEstudiante" update=":form:dialog"
+                               />
+        </p:column>
+    </p:dataTable>
+
+</html>
