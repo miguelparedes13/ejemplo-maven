@@ -1,2 +1,2 @@
 # ejemplo-maven
-Ejemplo utilizando maven  y wildfly 10
+Ejemplo utilizando maven  y wildfly 16
