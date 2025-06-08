@@ -4,9 +4,9 @@ package com.infoloxa.catequesis.logica.dao.Imp;
 import com.infoloxa.catequesis.logica.dao.GenericDao;
 import com.infoloxa.catequesis.logica.dao.SacramentoDao;
 import com.infoloxa.catequesis.model.Sacramentos;
-import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 
-@Stateless
+@ApplicationScoped
 public class SacramentoDaoImpl extends GenericDao<Sacramentos, Long> implements SacramentoDao {
 
     public SacramentoDaoImpl() {

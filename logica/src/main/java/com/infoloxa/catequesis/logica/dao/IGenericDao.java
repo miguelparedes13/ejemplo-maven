@@ -14,7 +14,6 @@ import com.infoloxa.catequesis.excepciones.EntidadNoGrabadaException;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-import javax.ejb.Local;
 
 /**
  * Interface IGenericDao.
@@ -24,7 +23,6 @@ import javax.ejb.Local;
  * @author Eduardo Proano
  * @revision $Revision: 1.1 $$
  */
-@Local
 public interface IGenericDao<T, PK extends Serializable> {
 
     /**

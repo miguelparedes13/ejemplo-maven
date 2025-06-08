@@ -6,13 +6,11 @@
 package com.infoloxa.catequesis.logica.dao;
 
 import com.infoloxa.catequesis.model.Sacramentos;
-import javax.ejb.Local;
 
 /**
  *
  * @author anthoserv
  */
-@Local
 public interface SacramentoDao extends IGenericDao<Sacramentos, Long>  {
     
 }

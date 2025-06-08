@@ -7,13 +7,11 @@ package com.infoloxa.catequesis.logica.dao;
 
 import com.infoloxa.catequesis.model.Estudiantes;
 import java.util.List;
-import javax.ejb.Local;
 
 /**
  *
  * @author anthoserv
  */
-@Local
 public interface EstudianteDao extends IGenericDao<Estudiantes, Long>  {
 /**
  * sssssssjjdjfjajdja

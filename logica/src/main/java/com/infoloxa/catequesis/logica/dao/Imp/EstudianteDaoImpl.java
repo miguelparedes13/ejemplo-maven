@@ -5,10 +5,10 @@ import com.infoloxa.catequesis.logica.dao.EstudianteDao;
 import com.infoloxa.catequesis.logica.dao.GenericDao;
 import com.infoloxa.catequesis.model.Estudiantes;
 import java.util.List;
-import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.Query;
 
-@Stateless
+@ApplicationScoped
 public class EstudianteDaoImpl extends GenericDao<Estudiantes, Long> implements EstudianteDao {
 
     public EstudianteDaoImpl() {

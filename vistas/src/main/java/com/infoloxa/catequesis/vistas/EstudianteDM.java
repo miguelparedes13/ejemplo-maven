@@ -9,16 +9,19 @@ package com.infoloxa.catequesis.vistas;
 import com.infoloxa.catequesis.model.Estudiantes;
 import java.util.ArrayList;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
+import javax.faces.view.ViewScoped;
+import java.io.Serializable;
 
 /**
  *
  * @author anthoserv
  */
-@ManagedBean(name = "estudianteDM")
+@Named("estudianteDM")
 @ViewScoped
-public class EstudianteDM {
+public class EstudianteDM implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private List<Estudiantes> listaEstudiantes= new ArrayList<>();
     private Estudiantes estudiantes= new Estudiantes();

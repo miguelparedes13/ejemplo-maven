@@ -10,9 +10,11 @@
         <module>logica</module>
         <module>vistas</module>
         <module>excepciones</module>
-        
+
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 </project>

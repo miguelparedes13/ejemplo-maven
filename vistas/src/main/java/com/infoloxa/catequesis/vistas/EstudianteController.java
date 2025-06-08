@@ -9,17 +9,15 @@ package com.infoloxa.catequesis.vistas;
 
 import com.infoloxa.catequesis.excepciones.EntidadNoGrabadaException;
 import com.infoloxa.catequesis.logica.servicios.CatequesisService;
-import com.infoloxa.catequesis.logica.servicios.Imp.CatequesisServiceImpl;
 import com.infoloxa.catequesis.model.Estudiantes;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ViewScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.faces.context.FacesContext;
 
 /**
@@ -28,15 +26,15 @@ import javax.faces.context.FacesContext;
  * @author Miguel Paredes
  * @revision $Revision: $
  */
-@ManagedBean(name = "estudianteController")
+@Named("estudianteController")
 @ViewScoped
 public class EstudianteController implements Serializable {
     private static final long serialVersionUID = 2894565334915564100L;
 
-    @ManagedProperty(value = "#{estudianteDM}")
+    @Inject
     private EstudianteDM estudianteDM;
 
-    @EJB(lookup = "java:global/logica-1.0/CatequesisServiceImpl!com.infoloxa.catequesis.logica.servicios.CatequesisService")
+    @Inject
     CatequesisService catequesisServicio;
     
     public void inform(){
