@@ -11,7 +11,6 @@ import com.infoloxa.catequesis.excepciones.EntidadNoGrabadaException;
 import com.infoloxa.catequesis.model.Estudiantes;
 import com.infoloxa.catequesis.model.Sacramentos;
 import java.util.List;
-import javax.ejb.Local;
 
 /**
  * <p>
@@ -21,7 +20,6 @@ import javax.ejb.Local;
  * @author anthoserv
  * @revision $Revision: $
  */
-@Local
 public interface CatequesisService {
 /**
  * 

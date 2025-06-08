@@ -13,20 +13,20 @@ import com.infoloxa.catequesis.logica.servicios.CatequesisService;
 import com.infoloxa.catequesis.model.Estudiantes;
 import com.infoloxa.catequesis.model.Sacramentos;
 import java.util.List;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 
 /**
  * Clase que permite realizar todo el proceso de facturación electtrónica
  *
  * @author anthoserv
  */
-@Stateless
+@ApplicationScoped
 public class CatequesisServiceImpl implements CatequesisService {
 
-    @EJB    
+    @Inject
     private EstudianteDao estudiantesDao;
-    @EJB    
+    @Inject
     private SacramentoDao sacramentoDao;
     
     @Override

@@ -4,15 +4,13 @@
  */
 package com.infoloxa.catequesis.logica;
 
-import javax.ejb.Stateless;
-import javax.ejb.LocalBean;
+import javax.enterprise.context.ApplicationScoped;
 
 /**
  *
  * @author martin
  */
-@Stateless
-@LocalBean
+@ApplicationScoped
 public class NewSessionBean {
 
     public void businessMethod() {
