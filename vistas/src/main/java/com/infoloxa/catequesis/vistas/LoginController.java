@@ -32,8 +32,11 @@ public class LoginController implements Serializable {
 
     public void cerrarSesion() throws IOException {
         autenticado = false;
-        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        FacesContext.getCurrentInstance().getExternalContext().redirect("faces/pages/login.xhtml");
+        FacesContext faces = FacesContext.getCurrentInstance();
+        faces.getExternalContext().invalidateSession();
+        String loginPage = faces.getExternalContext().getRequestContextPath()
+                + "/faces/pages/login.xhtml";
+        faces.getExternalContext().redirect(loginPage);
     }
 
     public boolean isAutenticado() {
