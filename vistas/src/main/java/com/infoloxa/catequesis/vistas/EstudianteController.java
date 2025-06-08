@@ -9,7 +9,6 @@ package com.infoloxa.catequesis.vistas;
 
 import com.infoloxa.catequesis.excepciones.EntidadNoGrabadaException;
 import com.infoloxa.catequesis.logica.servicios.CatequesisService;
-import com.infoloxa.catequesis.logica.servicios.Imp.CatequesisServiceImpl;
 import com.infoloxa.catequesis.model.Estudiantes;
 import java.io.Serializable;
 import java.util.List;
@@ -40,8 +39,8 @@ public class EstudianteController implements Serializable {
     CatequesisService catequesisServicio;
     
     public void inform(){
-        List<Estudiantes> ontenerEstudiantes = catequesisServicio.ontenerEstudiantes();
-        estudianteDM.setListaEstudiantes(ontenerEstudiantes);
+        List<Estudiantes> listaEstudiantes = catequesisServicio.obtenerEstudiantes();
+        estudianteDM.setListaEstudiantes(listaEstudiantes);
     }
 
     public void nuevo(){
