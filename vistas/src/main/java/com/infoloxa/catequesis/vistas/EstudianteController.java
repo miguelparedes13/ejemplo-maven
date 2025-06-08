@@ -38,8 +38,8 @@ public class EstudianteController implements Serializable {
     CatequesisService catequesisServicio;
     
     public void inform(){
-        List<Estudiantes> ontenerEstudiantes = catequesisServicio.ontenerEstudiantes();
-        estudianteDM.setListaEstudiantes(ontenerEstudiantes);
+        List<Estudiantes> listaEstudiantes = catequesisServicio.obtenerEstudiantes();
+        estudianteDM.setListaEstudiantes(listaEstudiantes);
     }
 
     public void nuevo(){

@@ -70,8 +70,9 @@ public class CatequesisServiceImpl implements CatequesisService {
      * 
      * @return 
      */
-    public List<Sacramentos> obtenerSacramentos(){
-      return sacramentoDao.findAll();
+    @Override
+    public List<Sacramentos> obtenerSacramentos() {
+        return sacramentoDao.findAll();
     }
     
     /**
@@ -80,18 +81,20 @@ public class CatequesisServiceImpl implements CatequesisService {
      * @return
      * @throws EntidadNoEncontradaException 
      */
-    public Estudiantes obtenerEstudiantePorCedula(String cedula) throws EntidadNoEncontradaException{
+    @Override
+    public Estudiantes obtenerEstudiantePorCedula(String cedula) throws EntidadNoEncontradaException {
         List<Estudiantes> obtenerEstudiantesCedula = estudiantesDao.obtenerEstudiantesCedula(cedula);
-    if(obtenerEstudiantesCedula.isEmpty()){
-        throw new EntidadNoEncontradaException("Estudiante no encontrado");
-    }
-    return obtenerEstudiantesCedula.get(0);
+        if (obtenerEstudiantesCedula.isEmpty()) {
+            throw new EntidadNoEncontradaException("Estudiante no encontrado");
+        }
+        return obtenerEstudiantesCedula.get(0);
     }
     /**
      * 
      * @return 
      */
-    public List<Estudiantes> ontenerEstudiantes(){
+    @Override
+    public List<Estudiantes> obtenerEstudiantes() {
         return estudiantesDao.findAll();
     }
 }

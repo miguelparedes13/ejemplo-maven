@@ -7,6 +7,7 @@ package com.infoloxa.catequesis.vistas;
 
 
 import com.infoloxa.catequesis.model.Estudiantes;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Named;

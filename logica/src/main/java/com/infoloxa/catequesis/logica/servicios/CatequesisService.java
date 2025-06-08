@@ -8,6 +8,7 @@ package com.infoloxa.catequesis.logica.servicios;
 
 
 import com.infoloxa.catequesis.excepciones.EntidadNoGrabadaException;
+import com.infoloxa.catequesis.excepciones.EntidadNoEncontradaException;
 import com.infoloxa.catequesis.model.Estudiantes;
 import com.infoloxa.catequesis.model.Sacramentos;
 import java.util.List;
@@ -32,8 +33,12 @@ public interface CatequesisService {
  * @param estudiantes
  * @throws EntidadNoGrabadaException 
  */
- void guardarEstudiantes(Estudiantes estudiantes) throws EntidadNoGrabadaException;
+void guardarEstudiantes(Estudiantes estudiantes) throws EntidadNoGrabadaException;
 
-    public List<Estudiantes> ontenerEstudiantes();
+List<Sacramentos> obtenerSacramentos();
+
+Estudiantes obtenerEstudiantePorCedula(String cedula) throws EntidadNoEncontradaException;
+
+List<Estudiantes> obtenerEstudiantes();
 
 }

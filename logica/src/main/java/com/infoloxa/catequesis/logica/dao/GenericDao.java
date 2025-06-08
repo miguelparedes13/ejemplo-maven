@@ -102,8 +102,9 @@ public class GenericDao<T, PK extends Serializable> implements IGenericDao<T, PK
      */
     @Override
     public void eliminar(final T o) throws EntidadNoBorradaException {
-        em.merge(o);
-        em.remove(o);
+        // merge devuelve la entidad administrada. Usamos esa instancia para
+        // evitar IllegalArgumentException al intentar eliminar un objeto detachado
+        em.remove(em.merge(o));
     }
 
     /**
